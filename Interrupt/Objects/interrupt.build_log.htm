@@ -1,0 +1,132 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Albin Fredy, HP Inc., LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DARMSTM.DLL V1.69.1.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.1.0.0
+Dialog DLL:      TARMSTM.DLL V1.67.1.0
+ 
+<h2>Project:</h2>
+D:\stm32\Interrupt\interrupt.uvprojx
+Project File Date:  07/19/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+interrupt.c(1): warning: In file included from...
+C:/Users/alber/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+                                               ^
+C:/Users/alber/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *                code will be based on direct access to peripheral<92>s registers 
+                                                                    ^
+C:/Users/alber/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+interrupt.c(18): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->ODR &= ~((1<<14));
+                   ~~ ^~~~~~~~~~
+interrupt.c(9): warning: array index 4 is past the end of the array (which contains 4 elements) [-Warray-bounds]
+        AFIO->EXTICR[4] = 0000;
+        ^            ~
+C:/Users/alber/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1414): note: expanded from macro 'AFIO'
+#define AFIO                ((AFIO_TypeDef *) AFIO_BASE)
+                            ^
+C:/Users/alber/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1028): note: array 'EXTICR' declared here
+  __IO uint32_t EXTICR[4];
+  ^
+C:/Users/alber/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include\core_cm3.h(175): note: expanded from macro '__IO'
+#define     __IO    volatile             /*!< Defines 'read / write' permissions */
+                    ^
+interrupt.c(26): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->CRH &= ~((1<<24) | (1<<26) | (1<<27));
+                   ~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+interrupt.c(27): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOA->CRL &= ~((1<<16) | (1<<18) | (1<<19));
+                   ~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+interrupt.c(31): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->CRH &= ~((1<<20));
+                   ~~ ^~~~~~~~~~
+interrupt.c(32): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->CRH &= ~((1<<22) | (1<<23));
+                   ~~ ^~~~~~~~~~~~~~~~~~~~
+interrupt.c(41): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void EXTI4_IRQHandler( )
+                     ^
+                       void
+interrupt.c(44): warning: // comments are not allowed in this language [-Wcomment]
+        //GPIOC->ODR &= ~((1<<14));
+        ^
+interrupt.c(47): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOC->ODR &= ~((1<<13));
+                   ~~ ^~~~~~~~~~
+interrupt.c(48): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+interrupt.c(41): warning: no previous prototype for function 'EXTI4_IRQHandler' [-Wmissing-prototypes]
+void EXTI4_IRQHandler( )
+     ^
+interrupt.c(41): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void EXTI4_IRQHandler( )
+^
+static 
+14 warnings generated.
+compiling interrupt.c...
+linking...
+Program Size: Code=1112 RO-data=252 RW-data=0 ZI-data=1632  
+FromELF: creating hex file...
+".\Objects\interrupt.axf" - 0 Error(s), 14 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.0.pack
+                Keil.STM32F1xx_DFP.2.4.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: GPIO Version: 1.3
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/STM32F103C8
+  ./RTE/_Target_1
+  C:/Users/alber/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/alber/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include
+  C:/Users/alber/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/RTE_Driver
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+
+   * Component: Keil::Device:GPIO:1.3
+      Include file:  RTE_Driver/GPIO_STM32F10x.h
+      Source file:   RTE_Driver/GPIO_STM32F10x.c
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device/Source/system_stm32f10x.c
+      Include file:  RTE_Driver/Config/RTE_Device.h
+      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
